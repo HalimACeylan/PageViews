@@ -40,6 +40,14 @@
             android:text="Log In" />
 
         <Button
+            android:id="@+id/btnThings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:text="THINGS TO KNOW" />
+
+        <Button
             android:id="@+id/btnAbout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
