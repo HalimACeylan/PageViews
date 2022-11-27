@@ -41,6 +41,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="About" />
+
+        <Button
+            android:id="@+id/btnClosest2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="closest distance " />
     </LinearLayout>
 
 </LinearLayout>

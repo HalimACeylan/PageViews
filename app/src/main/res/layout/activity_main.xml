@@ -55,6 +55,15 @@
             android:layout_margin="10dp"
             android:padding="15dp"
             android:text="About" />
+
+        <Button
+            android:id="@+id/btnClosest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:text="closest distance " />
+
     </LinearLayout>
 
 </LinearLayout>
