@@ -12,18 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="LOGIN"
+        android:background="@color/backgroundColor"
+        android:text="Welcome to ReApp"
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textColor="@color/black"
+        android:textSize="34sp" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email" />
+        android:padding="10dp"
+        android:text="Email"
+        android:background="@drawable/shapeedittext"/>
 
     <EditText
         android:id="@+id/txtPassword"
@@ -31,7 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:inputType="textPersonName"
-        android:text="Password" />
+        android:padding="10dp"
+        android:text="Password"
+        android:background="@drawable/shapeedittext"/>
 
     <Button
         android:id="@+id/forgetPass"
@@ -39,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:text="Forget My Password" />
+        android:text="Forget My Password"
+        android:textColor="@color/black"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,7 +58,8 @@
             android:layout_height="wrap_content"
             android:text="back"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="1dp" />
+            tools:layout_editor_absoluteY="1dp"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/btnlogin_pagelogin"
@@ -60,7 +67,8 @@
             android:layout_height="wrap_content"
             android:text="log in"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            android:textColor="@color/black"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
