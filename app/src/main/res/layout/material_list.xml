@@ -46,201 +46,97 @@
                     android:padding="10dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
+                        android:id="@+id/r1cell1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_margin="5dp">
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/r1cell1count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
                             android:textSize="29sp" />
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/imger1cell1ml"
                             android:layout_width="0dp"
                             android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
+                            app:layout_constraintBottom_toTopOf="@+id/btn2r1cell1ml"
+                            app:layout_constraintEnd_toEndOf="@+id/btn2r1cell1ml"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@mipmap/ic_launcher" />
 
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/btn1r1cell1ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-"
                             android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/btn2r1cell1ml"
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/btn2r1cell1ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                            app:layout_constraintStart_toEndOf="@+id/btn1r1cell1ml"
+                            app:layout_constraintTop_toBottomOf="@+id/imger1cell1ml" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
+                        android:id="@+id/r1cell2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_margin="5dp">
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/r1cell2count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
                             android:textSize="29sp" />
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/imger1cell2ml"
                             android:layout_width="0dp"
                             android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
+                            app:layout_constraintBottom_toTopOf="@+id/btn2r1cell2ml"
+                            app:layout_constraintEnd_toEndOf="@+id/btn2r1cell2ml"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@mipmap/ic_launcher" />
 
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/btn1r1cell2ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-"
                             android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/btn2r1cell2ml"
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/btn2r1cell2ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="10dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp">
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textSize="29sp" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="0dp"
-                            android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@mipmap/ic_launcher" />
-
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp">
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textSize="29sp" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="0dp"
-                            android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@mipmap/ic_launcher" />
-
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                            app:layout_constraintStart_toEndOf="@+id/btn1r1cell2ml"
+                            app:layout_constraintTop_toBottomOf="@+id/imger1cell2ml" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -254,201 +150,97 @@
                     android:padding="10dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
+                        android:id="@+id/r2cell1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_margin="5dp">
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/r2cell1count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
                             android:textSize="29sp" />
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/imger2cell1ml"
                             android:layout_width="0dp"
                             android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
+                            app:layout_constraintBottom_toTopOf="@+id/btn2r2cell1ml"
+                            app:layout_constraintEnd_toEndOf="@+id/btn2r2cell1ml"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@mipmap/ic_launcher" />
 
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/btn1r2cell1ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-"
                             android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/btn2r2cell1ml"
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/btn2r2cell1ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                            app:layout_constraintStart_toEndOf="@+id/btn1r2cell1ml"
+                            app:layout_constraintTop_toBottomOf="@+id/imger2cell1ml" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
+                        android:id="@+id/r2cell2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_margin="5dp">
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/r2cell2count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
                             android:textSize="29sp" />
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/imger2cell2ml"
                             android:layout_width="0dp"
                             android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
+                            app:layout_constraintBottom_toTopOf="@+id/btn2r2cell2ml"
+                            app:layout_constraintEnd_toEndOf="@+id/btn2r2cell2ml"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@mipmap/ic_launcher" />
 
 
                         <Button
-                            android:id="@+id/button5"
+                            android:id="@+id/btn1r2cell2ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="-"
                             android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/btn2r2cell2ml"
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/btn2r2cell2ml"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="10dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp">
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textSize="29sp" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="0dp"
-                            android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@mipmap/ic_launcher" />
-
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/linearLayout2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp">
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textSize="29sp" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="0dp"
-                            android:layout_height="101dp"
-                            app:layout_constraintBottom_toTopOf="@+id/button5"
-                            app:layout_constraintEnd_toEndOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="@+id/button5"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@mipmap/ic_launcher" />
-
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textSize="20sp"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/button4"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+"
-                            android:textSize="20sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/button5"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                            app:layout_constraintStart_toEndOf="@+id/btn1r2cell2ml"
+                            app:layout_constraintTop_toBottomOf="@+id/imger2cell2ml" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -468,7 +260,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnbuyokay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Okay" />
