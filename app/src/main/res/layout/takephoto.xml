@@ -26,8 +26,9 @@
         android:layout_width="412dp"
         android:layout_height="505dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/hurda_foreground"
-        tools:layout_editor_absoluteX="0dp" />
+        app:srcCompat="@mipmap/hurda_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
