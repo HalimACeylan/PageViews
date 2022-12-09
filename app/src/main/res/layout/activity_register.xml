@@ -21,7 +21,8 @@
             android:text="Create an Account"
             android:textAlignment="center"
             android:textSize="30sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:background="@drawable/shapeedittext"/>
 
         <EditText
             android:id="@+id/txtfirstname"

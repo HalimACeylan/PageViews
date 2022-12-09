@@ -44,7 +44,8 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:background="@drawable/shapeedittext"/>
 
     <ImageView
         android:id="@+id/imageView9"
@@ -63,6 +64,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:background="@drawable/shapeedittext"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/avatar"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="285dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shapeedittext"
+        android:text="Halim Ceylan"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawableLeft="@drawable/ic_baseline_call_24"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:layout_editor_absoluteX="166dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
