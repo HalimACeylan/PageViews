@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/arka"
     android:orientation="vertical"
-    tools:context=".Menu"
-    android:background="@drawable/arka">
+    tools:context=".Menu">
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_margin="5dp"
-        app:srcCompat="@mipmap/reapp" />
+        app:srcCompat="@mipmap/lastlogo" />
 
     <TextView
         android:id="@+id/textView3"
@@ -74,4 +74,4 @@
             android:text="About" />
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>
