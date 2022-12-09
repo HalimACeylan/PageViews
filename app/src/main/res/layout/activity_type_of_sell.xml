@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context=".TypeOfSell">
+    tools:context=".TypeOfSell"
+    android:background="@drawable/arka">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:text="Choose Type of Material"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/black"/>
+
     <Button
         android:id="@+id/btnplastic"
         android:layout_width="match_parent"

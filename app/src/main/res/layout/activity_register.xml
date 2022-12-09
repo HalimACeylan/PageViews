@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@drawable/arka">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
@@ -21,7 +20,8 @@
             android:layout_margin="10dp"
             android:text="Create an Account"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/txtfirstname"
@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="First Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtlastname"
@@ -38,7 +39,8 @@
             android:layout_margin="10dp"
             android:ems="10"
             android:hint="Last Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtemail"
@@ -46,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtphone"
@@ -55,7 +58,8 @@
             android:layout_margin="10dp"
             android:ems="10"
             android:hint="eg 506 111 11 11"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtaddress"
@@ -64,7 +68,8 @@
             android:layout_margin="10dp"
             android:ems="10"
             android:hint="Adress"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtdate"
@@ -73,7 +78,8 @@
             android:layout_margin="10dp"
             android:ems="10"
             android:hint="Birth Date"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtpassword"
@@ -81,8 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:hint="password"
-            android:inputType="numberPassword" />
+            android:hint="Password"
+            android:inputType="numberPassword"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/txtpasswordverification"
@@ -90,8 +97,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:hint="password again"
-            android:inputType="numberPassword" />
+            android:hint="Password Again"
+            android:inputType="numberPassword"
+            android:textColorHint="@color/black"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -103,7 +111,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SELLER"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"/>
 
             <CheckBox
                 android:id="@+id/checkBox2"
@@ -111,7 +120,8 @@
                 android:layout_height="wrap_content"
                 android:text="BUYER"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="0dp" />
+                tools:layout_editor_absoluteY="0dp"
+                android:textColor="@color/black"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <RelativeLayout
@@ -126,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="Back" />
+                android:text="back" />
 
             <Button
                 android:id="@+id/btnRegister"

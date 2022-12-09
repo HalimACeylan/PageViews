@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".About">
+    tools:context=".About"
+    android:background="@drawable/arka">
 
 
         <TextView
@@ -16,7 +17,8 @@
             android:text="ABOUT APPLİCATİONS"
             android:textAlignment="center"
             android:textSize="40sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:background="@drawable/shapeedittext"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -45,8 +47,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     android:layout_margin="7dp"
                     android:padding="10dp"
                     android:text="ı read "
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>
 
