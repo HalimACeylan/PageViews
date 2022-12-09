@@ -14,11 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="ABOUT APPLİCATİONS"
+            android:text="ABOUT APPLICATIONS"
             android:textAlignment="center"
             android:textSize="40sp"
-            android:textColor="@color/black"
-            android:background="@drawable/shapeedittext"/>
+            android:textColor="@color/black" />
 
         <ScrollView
             android:layout_width="match_parent"
