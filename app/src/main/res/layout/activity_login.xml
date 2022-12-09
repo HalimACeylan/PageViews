@@ -6,9 +6,16 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:background="@drawable/bejdenyesile"
+    android:background="@drawable/arka"
     tools:context=".Login">
-        <TextView
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/reapp" />
+
+    <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +33,8 @@
             android:inputType="textPersonName"
             android:padding="10dp"
             android:text="Email"
-            android:background="@drawable/shapeedittext"/>
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawablePadding="20dp"/>
 
         <EditText
             android:id="@+id/txtPassword"
@@ -36,7 +44,8 @@
             android:inputType="textPersonName"
             android:padding="10dp"
             android:text="Password"
-            android:background="@drawable/shapeedittext"/>
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            android:drawablePadding="20dp"/>
 
         <Button
             android:id="@+id/forgetPass"
@@ -44,8 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:text="Forget My Password"
-            android:textColor="@color/black"/>
+            android:text="Forget My Password" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -57,7 +65,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="back"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,7 +73,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="log in"
-                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/btnRegister"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
