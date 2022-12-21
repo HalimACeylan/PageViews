@@ -1,4 +1,4 @@
-package gui.ceng.mu.edu.pageviews;
+package gui.ceng.mu.edu.reapp;
 
 import android.os.Bundle;
 

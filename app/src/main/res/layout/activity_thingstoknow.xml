@@ -40,7 +40,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView4"
-            android:name="gui.ceng.mu.edu.pageviews.things_Info"
+            android:name="gui.ceng.mu.edu.reapp.things_Info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"

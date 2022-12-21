@@ -1,14 +1,14 @@
-package gui.ceng.mu.edu.pageviews;
+package gui.ceng.mu.edu.reapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ClosestLocation extends AppCompatActivity {
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_closest_location);
+        setContentView(R.layout.activity_about);
     }
 }

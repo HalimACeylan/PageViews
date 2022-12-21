@@ -1,14 +1,14 @@
-package gui.ceng.mu.edu.pageviews;
+package gui.ceng.mu.edu.reapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Login extends AppCompatActivity {
+public class ThingsToKnow extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_thingstoknow);
     }
 }
