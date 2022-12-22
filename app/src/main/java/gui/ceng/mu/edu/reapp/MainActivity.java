@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.FirebaseApp;
+
 public class MainActivity extends AppCompatActivity {
     Button loginBtn;
     Button signup;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this.getApplicationContext());
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.btnlogin);
         signup = findViewById(R.id.btnsignup);

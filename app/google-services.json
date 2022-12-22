@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "435767744423",
-    "project_id": "reapp-de5a9",
-    "storage_bucket": "reapp-de5a9.appspot.com"
+    "project_number": "225397727908",
+    "project_id": "reapp-fd015",
+    "storage_bucket": "reapp-fd015.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:435767744423:android:de7e3d5fe59fb434afc882",
+        "mobilesdk_app_id": "1:225397727908:android:c7cf57cec18a2676b6bc31",
         "android_client_info": {
           "package_name": "gui.ceng.mu.edu.reapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "435767744423-kse4iaeampqqa0arlq7vdv8bt95s71n4.apps.googleusercontent.com",
+          "client_id": "225397727908-2ms3843ttcjahss49megqhoteh6eff78.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWtsMUgnFZYeeJOiK6-1qUqHaQgs1ALqY"
+          "current_key": "AIzaSyBYeQmit1ComYGjQyqFBjapD7m9C4k0Ea4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "435767744423-kse4iaeampqqa0arlq7vdv8bt95s71n4.apps.googleusercontent.com",
+              "client_id": "225397727908-2ms3843ttcjahss49megqhoteh6eff78.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
