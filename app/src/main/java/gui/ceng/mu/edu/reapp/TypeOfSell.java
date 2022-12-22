@@ -31,6 +31,7 @@ public class TypeOfSell extends AppCompatActivity {
                 plasticMaterial.add(new Material("pet3",R.drawable.ic_baseline_info_24));
                 plasticMaterial.add(new Material("pet4",R.drawable.ic_baseline_info_24));
                 plasticMaterial.add(new Material("pet5",R.drawable.ic_baseline_info_24));
+                plasticMaterial.add(new Material("pet6",R.drawable.ic_baseline_info_24));
                 Intent intent = new Intent(TypeOfSell.this,SellPage.class);
                 intent.putExtra("list",(Serializable) plasticMaterial);
                 startActivity(intent);
