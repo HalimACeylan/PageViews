@@ -36,15 +36,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="You Should Know" />
+
         </LinearLayout>
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView4"
-            android:name="gui.ceng.mu.edu.reapp.things_Info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            tools:layout="@layout/fragment_things_info" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/thingsContainer"
+        android:name="gui.ceng.mu.edu.reapp.things_Info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_things_info" />
 
 
-    </LinearLayout>
+</LinearLayout>

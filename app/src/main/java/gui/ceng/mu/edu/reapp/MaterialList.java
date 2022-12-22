@@ -45,7 +45,6 @@ public class MaterialList extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_material_list, container, false);
         if(view instanceof RecyclerView){
-            Log.d("Mycheck", "Çalıştı: ");
             Context context = view.getContext();
             dataList = (RecyclerView) view;
             GridLayoutManager gridLayoutManager = new GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false);
