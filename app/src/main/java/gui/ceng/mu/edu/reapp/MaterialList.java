@@ -22,7 +22,6 @@ public class MaterialList extends Fragment {
     RecyclerView dataList;
     RecyclerView.Adapter adapter;
 
-
     public MaterialList() {
         // Required empty public constructor
     }

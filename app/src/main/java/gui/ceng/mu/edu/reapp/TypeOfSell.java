@@ -53,6 +53,12 @@ public class TypeOfSell extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button scrapButton = findViewById(R.id.btnscrap);
+        scrapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
     }
 }

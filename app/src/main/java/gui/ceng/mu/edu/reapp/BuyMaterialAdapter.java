@@ -17,17 +17,17 @@ import java.util.List;
 
 public class BuyMaterialAdapter extends RecyclerView.Adapter<BuyMaterialAdapter.ViewHolder> implements Serializable {
     List<Material> materials;
-    LayoutInflater inflater;
+
     int selectedIndex;
 
-    public BuyMaterialAdapter(List<Material> materials, Context context) {
+    public BuyMaterialAdapter(List<Material> materials) {
         this.materials = materials;
-        this.inflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.material_card_buy,parent,false);
         return new BuyMaterialAdapter.ViewHolder(view);
     }

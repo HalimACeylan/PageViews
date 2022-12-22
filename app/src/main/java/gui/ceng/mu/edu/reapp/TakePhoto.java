@@ -3,15 +3,12 @@ package gui.ceng.mu.edu.reapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 
-import java.io.Serializable;
-
-public class ProductPage extends AppCompatActivity implements Serializable {
+public class TakePhoto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_page);
+        setContentView(R.layout.activity_take_photo);
     }
 }

@@ -13,20 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapter.ViewHolder> implements Serializable {
     List<Material>materials;
-    LayoutInflater inflater;
 
-    public SellMaterialAdapter(Context context, List<Material>materials) {
+    public SellMaterialAdapter(List<Material>materials) {
         this.materials = materials;
-        this.inflater = LayoutInflater.from(context);
     }
     int selectedIndex;
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.material_card_sell,parent,false);
         return new ViewHolder(view);
     }
@@ -62,7 +62,7 @@ public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapte
         return materials.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements Serializable {
         TextView title;
         ImageView image;
         Button btnInc;

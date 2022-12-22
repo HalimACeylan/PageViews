@@ -17,7 +17,7 @@ public class BuyPage extends AppCompatActivity {
         setContentView(R.layout.activity_buy_page);
         BuyMaterialAdapter adapter;
         ArrayList<Material> materialList = (ArrayList<Material> ) getIntent().getSerializableExtra("list");
-        adapter = new BuyMaterialAdapter(materialList,this);
+        adapter = new BuyMaterialAdapter(materialList);
         FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
         MaterialList mf = MaterialList.newInstance(adapter);
         fts.add(R.id.buyContainer,mf);
