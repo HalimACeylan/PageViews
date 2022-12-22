@@ -17,12 +17,16 @@ public class ThingsToKnow extends AppCompatActivity {
         Button btnWhyRec = findViewById(R.id.btnWhyRec);
         Button btnInside =findViewById(R.id.btnWaste);
         Button btnShouldKnow =findViewById(R.id.btnShouldKnow);
+        FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
+        things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,"Burası Uzun Yazı1");
+        fts.add(R.id.thingsContainer,thi);
+        fts.commit();
 
         btnWhyRec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("Hello1",R.drawable.ic_baseline_info_24,"Burası Uzun Yazı1");
+                things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,"Burası Uzun Yazı1");
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
             }
@@ -31,7 +35,7 @@ public class ThingsToKnow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("Hello2",R.drawable.ic_baseline_info_24,"Burası Uzun Yazı2");
+                things_Info thi = things_Info.newInstance("Which Waste Goes to Which Bin?",R.mipmap.insidewaste_foreground,"Burası Uzun Yazı2");
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
 
@@ -41,7 +45,7 @@ public class ThingsToKnow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("Hello3",R.drawable.ic_baseline_info_24,"Burası Uzun Yazı3");
+                things_Info thi = things_Info.newInstance("False Information About Recycling",R.mipmap.should_foreground,"Burası Uzun Yazı3");
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
             }
