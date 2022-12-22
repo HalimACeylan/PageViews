@@ -3,11 +3,13 @@ package gui.ceng.mu.edu.reapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class SellPage extends AppCompatActivity {
@@ -27,7 +29,11 @@ public class SellPage extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("ITEMS", materialList.toString());
+                Intent intent = new Intent(SellPage.this,ProductPage.class);
+                ArrayList<Material> materials = new ArrayList<Material>();
+                materials.add(new Material("pet1",R.drawable.ic_baseline_info_24));
+                intent.putExtra("listOfSell",(Serializable) materials );
+                startActivity(intent);
             }
         });
     }
