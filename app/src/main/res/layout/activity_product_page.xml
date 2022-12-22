@@ -22,7 +22,7 @@ tools:context=".ProductPage" >
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imgPView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -37,12 +37,12 @@ tools:context=".ProductPage" >
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="TextView"
+        android:text="Description of Product"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imgPView" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -60,7 +60,7 @@ tools:context=".ProductPage" >
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:text="Halim Ceylan"
             android:textSize="18sp" />
 
         <TextView
@@ -68,7 +68,7 @@ tools:context=".ProductPage" >
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:text="05647862563"
             android:textSize="18sp" />
 
         <TextView
@@ -76,7 +76,7 @@ tools:context=".ProductPage" >
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:text="Mugla"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -85,7 +85,7 @@ tools:context=".ProductPage" >
         android:id="@+id/BuyOrPost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Buy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
