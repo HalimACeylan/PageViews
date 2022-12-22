@@ -7,10 +7,7 @@
     </string>
     <string name="inside_of_waste">
         Placing the wrong types of materials in a recycling bin is known as contamination. Contamination occurs when non-recyclable materials are mixed in with recyclable materials, making it difficult or impossible to properly process the recyclables.
-
-There are many different types of materials that can be mistaken for recyclables, but are actually not accepted in most recycling programs. Some examples of non-recyclable materials that are commonly mistaken as recyclable include:
-
-Plastic bags and films, such as those used to package groceries
+There are many different types of materials that can be mistaken for recyclables, but are actually not accepted in most recycling programs. Some examples of non-recyclable materials that are commonly mistaken as recyclable include:Plastic bags and films, such as those used to package groceries
 Glassware that is not clear, such as colored or tinted glass
 Foam packaging, such as that used to protect electronic devices during shipping
 Food waste
@@ -19,11 +16,8 @@ By understanding what types of materials are and are not accepted in your local 
     </string>
     <string name="you_should_know">
         There are many common misunderstandings about what types of materials can be recycled, and these misunderstandings can lead to contamination of the recycling stream. Contamination is when non-recyclable materials are mixed in with recyclable materials, making it difficult or impossible to properly process the recyclables.
-
 One misunderstood fact about recyclable materials is that all paper can be recycled. While most types of paper, such as office paper, newspaper, and cardboard, can be recycled, there are some types of paper that cannot. For example, wax-coated paper, such as that used for some types of food packaging, is not typically accepted in recycling programs because it cannot be easily processed.
-
 Another misunderstood fact is that all types of plastic can be recycled. While many types of plastic, such as bottles and containers, can be recycled, others cannot. For example, plastic bags and films, such as those used to package groceries, are not typically accepted in curbside recycling programs because they can get stuck in the machinery used to sort and process recyclables. Instead, these types of plastics should be taken to a store that has a plastic film recycling program.
-
 By understanding what types of materials can and cannot be recycled, we can help to reduce contamination and ensure that recyclables are properly processed and used to their full potential.
     </string>
 </resources>

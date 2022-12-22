@@ -16,27 +16,40 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtTHead"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Things to Know"
-            android:textAlignment="center"
-            android:textSize="39sp"
-            android:textColor="@color/black"/>
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imgT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:src="@mipmap/ic_launcher_foreground" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/txtTBodyText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare pharetra euismod. In in purus at leo mollis congue. Sed congue nunc eu blandit gravida. Fusce vestibulum urna et tincidunt maximus. Sed lobortis sodales quam, in sodales libero fermentum vitae. Vestibulum urna urna, lobortis quis pretium sit amet, viverra posuere dolor. Morbi quis iaculis metus. Donec pellentesque sagittis lacus, vitae vulputate lectus convallis non. Ut eu facilisis leo, vel ultrices diam. Cras consectetur erat eget metus fermentum, eget pulvinar ipsum tempus. Proin luctus iaculis lorem, sit amet commodo risus dignissim vitae. Aliquam luctus ante eu mattis euismod. Phasellus in leo ac nisl rutrum tempor. Vivamus sollicitudin vitae dolor ut laoreet. Curabitur venenatis nunc id dolor luctus ornare. Donec mauris felis, tincidunt vel mattis non, placerat non lacus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare pharetra euismod. In in purus at leo mollis congue. Sed congue nunc eu blandit gravida. Fusce vestibulum urna et tincidunt maximus. Sed lobortis sodales quam, in sodales libero fermentum vitae. Vestibulum urna urna, lobortis quis pretium sit amet, viverra posuere dolor. Morbi quis iaculis metus. Donec pellentesque sagittis lacus, vitae vulputate lectus convallis non. Ut eu facilisis leo, vel ultrices diam. Cras consectetur erat eget metus fermentum, eget pulvinar ipsum tempus. Proin luctus iaculis lorem, sit amet commodo risus dig"
-            android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/txtTHead"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Things to Know"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="39sp" />
+
+                <ImageView
+                    android:id="@+id/imgT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:src="@mipmap/ic_launcher_foreground" />
+
+                <TextView
+                    android:id="@+id/txtTBodyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare pharetra euismod. In in purus at leo mollis congue. Sed congue nunc eu blandit gravida. Fusce vestibulum urna et tincidunt maximus. Sed lobortis sodales quam, in sodales libero fermentum vitae. Vestibulum urna urna, lobortis quis pretium sit amet, viverra posuere dolor. Morbi quis iaculis metus. Donec pellentesque sagittis lacus, vitae vulputate lectus convallis non. Ut eu facilisis leo, vel ultrices diam. Cras consectetur erat eget metus fermentum, eget pulvinar ipsum tempus. Proin luctus iaculis lorem, sit amet commodo risus dignissim vitae. Aliquam luctus ante eu mattis euismod. Phasellus in leo ac nisl rutrum tempor. Vivamus sollicitudin vitae dolor ut laoreet. Curabitur venenatis nunc id dolor luctus ornare. Donec mauris felis, tincidunt vel mattis non, placerat non lacus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare pharetra euismod. In in purus at leo mollis congue. Sed congue nunc eu blandit gravida. Fusce vestibulum urna et tincidunt maximus. Sed lobortis sodales quam, in sodales libero fermentum vitae. Vestibulum urna urna, lobortis quis pretium sit amet, viverra posuere dolor. Morbi quis iaculis metus. Donec pellentesque sagittis lacus, vitae vulputate lectus convallis non. Ut eu facilisis leo, vel ultrices diam. Cras consectetur erat eget metus fermentum, eget pulvinar ipsum tempus. Proin luctus iaculis lorem, sit amet commodo risus dig"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </FrameLayout>

@@ -18,7 +18,7 @@ public class ThingsToKnow extends AppCompatActivity {
         Button btnInside =findViewById(R.id.btnWaste);
         Button btnShouldKnow =findViewById(R.id.btnShouldKnow);
         FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-        things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,"Burası Uzun Yazı1");
+        things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,getResources().getString(R.string.why_recycle));
         fts.add(R.id.thingsContainer,thi);
         fts.commit();
 
@@ -26,7 +26,7 @@ public class ThingsToKnow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,"Burası Uzun Yazı1");
+                things_Info thi = things_Info.newInstance("Why Recycle is Important?",R.mipmap.whyrecycle_foreground,getResources().getString(R.string.why_recycle));
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
             }
@@ -35,7 +35,7 @@ public class ThingsToKnow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("Which Waste Goes to Which Bin?",R.mipmap.insidewaste_foreground,"Burası Uzun Yazı2");
+                things_Info thi = things_Info.newInstance("Which Waste Goes to Which Bin?",R.mipmap.insidewaste_foreground,getResources().getString(R.string.inside_of_waste));
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
 
@@ -45,7 +45,7 @@ public class ThingsToKnow extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
-                things_Info thi = things_Info.newInstance("False Information About Recycling",R.mipmap.should_foreground,"Burası Uzun Yazı3");
+                things_Info thi = things_Info.newInstance("False Information About Recycling",R.mipmap.should_foreground,getResources().getString(R.string.you_should_know));
                 fts.add(R.id.thingsContainer,thi);
                 fts.commit();
             }
