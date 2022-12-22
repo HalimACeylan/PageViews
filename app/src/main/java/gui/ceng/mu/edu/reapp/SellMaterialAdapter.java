@@ -35,7 +35,7 @@ public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
     Material currentMaterial = materials.get(position);
     holder.title.setText(currentMaterial.getName());
-    holder.image.setImageResource(currentMaterial.getImage());
+    holder.image.setImageBitmap(currentMaterial.getImage());
     holder.counter.setText(Integer.toString(currentMaterial.getCount()));
     holder.btnInc.setOnClickListener(new View.OnClickListener() {
         @Override

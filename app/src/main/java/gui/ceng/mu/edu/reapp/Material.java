@@ -7,21 +7,21 @@ import java.io.Serializable;
 
 public class Material implements Serializable {
     String name;
-    int image;
+    Bitmap image;
     int count;
 
-    public Material(String name,int image) {
+    public Material(String name,Bitmap image) {
         super();
         this.name = name;
         this.image = image;
         this.count = 0;
     }
 
-    public int getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 
@@ -38,7 +38,11 @@ public class Material implements Serializable {
     }
 
     public void setCount(int count) {
-        this.count = count;
+        if(count <=0 ){
+            this.count = 0;
+        }else {
+            this.count = count;
+        }
     }
 
 

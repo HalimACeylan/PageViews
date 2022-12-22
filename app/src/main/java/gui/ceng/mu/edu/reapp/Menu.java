@@ -3,6 +3,7 @@ package gui.ceng.mu.edu.reapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,9 @@ public class Menu extends AppCompatActivity {
     Button btnCLosest;
     Button btnThings;
     Button btnAbout;
+    int w = 150, h = 150;
+    Bitmap.Config conf = Bitmap.Config.ARGB_8888; // see other conf types
+    Bitmap bmp = Bitmap.createBitmap(w, h, conf);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +35,11 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Material> plasticMaterial = new ArrayList<>();
-                plasticMaterial.add(new Material("pet1",R.drawable.ic_baseline_person_24));
-                plasticMaterial.add(new Material("pet2",R.drawable.ic_baseline_person_24));
-                plasticMaterial.add(new Material("pet3",R.drawable.ic_baseline_person_24));
-                plasticMaterial.add(new Material("pet4",R.drawable.ic_baseline_person_24));
-                plasticMaterial.add(new Material("pet5",R.drawable.ic_baseline_person_24));
+                plasticMaterial.add(new Material("pet1",bmp));
+                plasticMaterial.add(new Material("pet2",bmp));
+                plasticMaterial.add(new Material("pet3",bmp));
+                plasticMaterial.add(new Material("pet4",bmp));
+                plasticMaterial.add(new Material("pet5",bmp));
                 Intent i = new Intent(Menu.this,BuyPage.class);
                 i.putExtra("list",(Serializable) plasticMaterial);
                 startActivity(i);

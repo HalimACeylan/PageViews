@@ -60,12 +60,4 @@
         android:padding="15dp"
         android:text="Battery Waste" />
 
-    <Button
-        android:id="@+id/btnothers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:padding="15dp"
-        android:text="Other Waste" />
-
 </LinearLayout>

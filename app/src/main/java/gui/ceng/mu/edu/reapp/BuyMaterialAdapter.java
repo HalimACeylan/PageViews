@@ -36,7 +36,7 @@ public class BuyMaterialAdapter extends RecyclerView.Adapter<BuyMaterialAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Material currentMaterial = materials.get(position);
         holder.title.setText(currentMaterial.getName());
-        holder.image.setImageResource(currentMaterial.getImage());
+        holder.image.setImageBitmap(currentMaterial.getImage());
         holder.buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
