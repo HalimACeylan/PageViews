@@ -15,14 +15,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/btnWhyRec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Why Reycyle" />
+                android:text="Why Recycle" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btnWaste"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -31,7 +31,7 @@
                 android:text="Inside of Waste" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/btnShouldKnow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

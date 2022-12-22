@@ -31,6 +31,7 @@ public class SellPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SellPage.this,ProductPage.class);
+                intent.putExtra("onChoosen",new Material("pet1",R.drawable.ic_baseline_info_24));
                 startActivity(intent);
             }
         });
