@@ -35,11 +35,6 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Material> plasticMaterial = new ArrayList<>();
-                plasticMaterial.add(new Material("pet1",bmp));
-                plasticMaterial.add(new Material("pet2",bmp));
-                plasticMaterial.add(new Material("pet3",bmp));
-                plasticMaterial.add(new Material("pet4",bmp));
-                plasticMaterial.add(new Material("pet5",bmp));
                 Intent i = new Intent(Menu.this,BuyPage.class);
                 i.putExtra("list",(Serializable) plasticMaterial);
                 startActivity(i);

@@ -31,8 +31,9 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 email = findViewById(R.id.txtemail);
+                Log.d("TAG",  email.getText().toString());
                 password = findViewById(R.id.txtpassword);
-                mAuth.createUserWithEmailAndPassword(email.toString(), password.toString())
+                mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

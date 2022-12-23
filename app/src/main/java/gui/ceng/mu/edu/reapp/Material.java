@@ -1,16 +1,18 @@
 package gui.ceng.mu.edu.reapp;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 
+import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 
 public class Material implements Serializable {
-    String name;
-    Bitmap image;
-    int count;
+    private String name;
+    private byte[] image;
+    private int count;
 
-    public Material(String name,Bitmap image) {
+    public Material(String name,byte[] image) {
         super();
         this.name = name;
         this.image = image;
@@ -18,10 +20,15 @@ public class Material implements Serializable {
     }
 
     public Bitmap getImage() {
-        return image;
+        if(image != null){
+            return BitmapFactory.decodeByteArray(image, 0, image.length);
+        }else {
+            return null;
+        }
+
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage( byte[] image) {
         this.image = image;
     }
 

@@ -21,6 +21,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
     int REQUEST_IMAGE_CAPTURE = 0;
     private Bitmap imageBitmap;
     Material material;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,34 +32,37 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         TextView txtName = findViewById(R.id.txtPUserName);
         TextView txtNumber = findViewById(R.id.txtPUserNumber);
         TextView txtAddress = findViewById(R.id.txtPUserAdress);
-        ImageView imageView = imageView = findViewById(R.id.imgPView);
+        imageView = imageView = findViewById(R.id.imgPView);
         Button btnBuyOrPost = findViewById(R.id.BuyOrPost);
         txtDesc.setText(material.getName());
         if(material.getImage() == null){
             new TakePhotoTask().execute();
-            imageView.setImageBitmap(material.getImage());
         }else {
             imageView.setImageBitmap(material.getImage());
         }
         btnBuyOrPost.setText("Post");
 
     }
-    private class TakePhotoTask extends AsyncTask<Void, Void, Bitmap> {
+    private class TakePhotoTask extends AsyncTask<Void, Void, byte[]> {
 
         @Override
-        protected Bitmap doInBackground(Void... voids) {
+        protected byte[] doInBackground(Void... voids) {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             while (!resultReceived) {
                 // wait for the result to be received
             }
-            return imageBitmap;
+            ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteStream);
+            byte[] imageInByte = byteStream.toByteArray();
+            Log.d("MyByte", imageInByte.toString());
+            return imageInByte;
         }
 
         @Override
-        protected void onPostExecute(Bitmap imageBitmap) {
-
-            material.setImage(imageBitmap);
+        protected void onPostExecute(byte[] imageInByte) {
+           material.setImage(imageInByte);
+           imageView.setImageBitmap(material.getImage());
         }
 
     }

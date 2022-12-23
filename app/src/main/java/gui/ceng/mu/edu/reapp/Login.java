@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signInWithEmailAndPassword(email.toString(), password.toString()).
+                mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).
                         addOnCompleteListener(Login.this,
                                 new OnCompleteListener<AuthResult>() {
                             @Override
@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Login.this,MainActivity.class);
+                Intent i = new Intent(Login.this,Menu.class);
                 startActivity(i);
             }
         });
