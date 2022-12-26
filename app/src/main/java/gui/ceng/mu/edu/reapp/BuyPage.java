@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -63,14 +64,25 @@ public class BuyPage extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for (QueryDocumentSnapshot document : task.getResult()) {
+                        //user Selling List
                         List<Map<String, String>> userItems = (List<Map<String, String>>)document.get("UserSelling");
+                        //User Information
+                        String userName = (String) document.get("firstName");
+                        String userLastName = (String) document.get("lastName");
+                        String phoneNumber = (String) document.get("phoneNumber");
+                        String userId = (String) document.getId();
                         final long ONE_MEGABYTE = 1024 * 1024;
                         final CountDownLatch latch = new CountDownLatch(userItems.size());
                         for (Map<String,String> materialInfo:userItems) {
                             storageRef.child(materialInfo.get("url")).getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                                 @Override
                                 public void onSuccess(byte[] bytes) {
-                                    materialList.add(new Material(materialInfo.get("name"),bytes));
+                                    Material index = new Material(materialInfo.get("name"),bytes);
+                                    index.getOwner().put("firstName",userName);
+                                    index.getOwner().put("lastName",userLastName);
+                                    index.getOwner().put("phoneNumber",phoneNumber);
+                                    index.getOwner().put("userId",userId);
+                                    materialList.add(index);
                                     latch.countDown();
                                     Log.d("itemsss", materialList.toString());
 
@@ -88,8 +100,6 @@ public class BuyPage extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-
-                    Log.d("itemsss", materialList.toString());
                     final BuyMaterialAdapter adapter = new BuyMaterialAdapter(materialList);
                     FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
                     MaterialList mf = MaterialList.newInstance(adapter);

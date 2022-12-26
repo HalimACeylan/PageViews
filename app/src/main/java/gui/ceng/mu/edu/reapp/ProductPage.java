@@ -68,10 +68,27 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         txtDesc.setText(material.getName());
         if (material.getImage() == null) {
             new TakePhotoTask().execute();
+            txtHeader.setText(material.getName());
             btnBuyOrPost.setText("Post");
+            userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    DocumentSnapshot curUser = task.getResult();
+                    String userName = curUser.get("firstName") + "" +curUser.get("lastName");
+                    txtName.setText(userName);
+                    txtNumber.setText((String) curUser.get("phoneNumber"));
+                    txtAddress.setText((String) curUser.get("firstName"));
+                }
+            });
         } else {
             imageView.setImageBitmap(material.getImage());
             btnBuyOrPost.setText("Buy");
+            txtHeader.setText(material.getName());
+            HashMap<String,String> curUser = material.getOwner();
+            String userName = curUser.get("firstName") + "" +curUser.get("lastName");
+            txtName.setText(userName);
+            txtNumber.setText(curUser.get("phoneNumber"));
+            txtAddress.setText(curUser.get("firstName"));
         }
         btnBuyOrPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,17 +157,29 @@ public class ProductPage extends AppCompatActivity implements Serializable {
             while (!resultReceived) {
                 // wait for the result to be received
             }
-            ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
-            imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteStream);
-            byte[] imageInByte = byteStream.toByteArray();
-            Log.d("MyByte", imageInByte.toString());
-            return imageInByte;
+            if (imageBitmap == null) {
+                // Return null if the imageBitmap is null
+                return null;
+            }else {
+                ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+                imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteStream);
+                byte[] imageInByte = byteStream.toByteArray();
+                return imageInByte;
+            }
         }
 
         @Override
         protected void onPostExecute(byte[] imageInByte) {
-            material.setImage(imageInByte);
-            imageView.setImageBitmap(material.getImage());
+            if (imageInByte == null) {
+                // Finish the activity if the imageInByte array is null
+                Toast.makeText(ProductPage.this, "Please Add Image your Material", Toast.LENGTH_LONG).show();
+                ProductPage.this.finish();
+
+            }else {
+                material.setImage(imageInByte);
+                imageView.setImageBitmap(material.getImage());
+            }
+
         }
 
     }
@@ -161,7 +190,11 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");
+            Log.d("AfterActivity", "onActivityResult: " + imageBitmap.toString());
             resultReceived = true;
+        }else {
+            Toast.makeText(ProductPage.this, "Please Add Image your Material", Toast.LENGTH_LONG).show();                ProductPage.this.finish();
+            ProductPage.this.finish();
         }
     }
 }

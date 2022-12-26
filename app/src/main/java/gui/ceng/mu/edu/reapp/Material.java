@@ -6,17 +6,29 @@ import android.view.View;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class Material implements Serializable {
     private String name;
     private byte[] image;
     private int count;
+    private HashMap<String ,String> owner ;
 
-    public Material(String name,byte[] image) {
+    public HashMap<String, String> getOwner() {
+        return owner;
+    }
+
+    public void setOwner(HashMap<String, String> owner) {
+        this.owner = owner;
+    }
+
+    public Material(String name, byte[] image) {
         super();
         this.name = name;
         this.image = image;
         this.count = 0;
+        this.owner = new HashMap<>();
     }
 
     public Bitmap getImage() {
@@ -55,13 +67,13 @@ public class Material implements Serializable {
         }
     }
 
-
     @Override
     public String toString() {
         return "Material{" +
                 "name='" + name + '\'' +
                 ", image=" + image +
                 ", count=" + count +
+                ", owner=" + owner +
                 '}';
     }
 }

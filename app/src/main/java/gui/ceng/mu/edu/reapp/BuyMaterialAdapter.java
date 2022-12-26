@@ -1,6 +1,8 @@
 package gui.ceng.mu.edu.reapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +19,6 @@ import java.util.List;
 
 public class BuyMaterialAdapter extends RecyclerView.Adapter<BuyMaterialAdapter.ViewHolder> implements Serializable {
     List<Material> materials;
-
-    int selectedIndex;
 
     public BuyMaterialAdapter(List<Material> materials) {
         this.materials = materials;
@@ -40,7 +40,10 @@ public class BuyMaterialAdapter extends RecyclerView.Adapter<BuyMaterialAdapter.
         holder.buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("HELLO", "onClick: ");
+                Activity currentActivity = (Activity) holder.itemView.getContext();
+                Intent intent = new Intent(currentActivity,ProductPage.class);
+                intent.putExtra("onChosen",currentMaterial);
+                currentActivity.startActivity(intent);
             }
         });
 
