@@ -21,13 +21,16 @@ public class Material implements Serializable {
 
     public Bitmap getImage() {
         if(image != null){
-            return BitmapFactory.decodeByteArray(image, 0, image.length);
+            Bitmap photo = BitmapFactory.decodeByteArray(image, 0, image.length);
+            return Bitmap.createScaledBitmap(photo,250,250,true);
         }else {
             return null;
         }
 
     }
-
+    public byte[] getImageInByte() {
+            return image;
+    }
     public void setImage( byte[] image) {
         this.image = image;
     }

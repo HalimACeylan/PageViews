@@ -17,9 +17,7 @@ public class Menu extends AppCompatActivity {
     Button btnCLosest;
     Button btnThings;
     Button btnAbout;
-    int w = 150, h = 150;
-    Bitmap.Config conf = Bitmap.Config.ARGB_8888; // see other conf types
-    Bitmap bmp = Bitmap.createBitmap(w, h, conf);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +60,6 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        btnAbout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Menu.this,About.class);
-            }
-        });
+
     }
 }

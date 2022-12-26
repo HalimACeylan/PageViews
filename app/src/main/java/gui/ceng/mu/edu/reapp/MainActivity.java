@@ -55,13 +55,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
     });
-    btnAbout.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent(MainActivity.this,About.class);
-        }
-    });
-
 
 
     }

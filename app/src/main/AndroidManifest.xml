@@ -16,13 +16,6 @@
         android:theme="@style/Theme.PageViews"
         tools:targetApi="31" >
         <activity
-            android:name=".TakePhoto"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ProductPage"
             android:exported="false" >
             <meta-data
@@ -38,13 +31,6 @@
         </activity>
         <activity
             android:name=".BuyPage"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".About"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

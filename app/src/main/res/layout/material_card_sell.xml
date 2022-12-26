@@ -47,8 +47,11 @@
                 android:id="@+id/imgIcon"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:maxWidth="150dp"
+                android:maxHeight="150dp"
+                android:minWidth="150dp"
+                android:minHeight="150dp"
                 app:layout_constraintEnd_toEndOf="@+id/btnInc"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/counter"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle"
                 tools:srcCompat="@tools:sample/avatars" />

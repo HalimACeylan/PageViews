@@ -5,14 +5,17 @@
     android:id="@+id/relativeLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     android:maxWidth="250dp"
-    android:maxHeight="250dp"
+    android:maxHeight="300dp"
     android:minWidth="200dp"
-    android:minHeight="200dp">
+    android:minHeight="300dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:minHeight="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,6 +24,8 @@
             android:id="@+id/material_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
             android:padding="10dp">
 
             <Button
@@ -38,6 +43,7 @@
                 android:id="@+id/imgIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxHeight="250dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle"

@@ -7,148 +7,153 @@
     tools:context=".Register"
     android:background="@drawable/arka">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Create an Account"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textColor="@color/black" />
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/txtfirstname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="First Name"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/txtlastname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Last Name"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/txtemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/txtphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="eg 506 111 11 11"
-            android:inputType="phone"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/txtaddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Adress"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/black"/>
-
-        <EditText
-            android:id="@+id/txtdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Birth Date"
-            android:inputType="date"
-            android:minHeight="48dp"
-            android:textColorHint="@color/black" />
-
-        <EditText
-            android:id="@+id/txtpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="numberPassword"
-            android:minHeight="48dp"
-            android:textColorHint="@color/black" />
-
-        <EditText
-            android:id="@+id/txtpasswordverification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Password Again"
-            android:inputType="numberPassword"
-            android:textColorHint="@color/black"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="21dp"
-            android:layout_margin="5dp">
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SELLER"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textColor="@color/black"/>
+                android:layout_margin="10dp"
+                android:text="Create an Account"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
 
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/txtfirstname"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BUYER"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="0dp"
-                android:textColor="@color/black"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_margin="10dp"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginTop="10dp"
-            android:gravity="bottom">
-
-            <Button
-                android:id="@+id/btnBackRegister"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/txtlastname"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:text="back" />
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black" />
 
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/txtemail"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="register" />
+                android:layout_margin="10dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/black" />
 
-        </RelativeLayout>
+            <EditText
+                android:id="@+id/txtphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="eg 506 111 11 11"
+                android:inputType="phone"
+                android:textColorHint="@color/black" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/txtaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Adress"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/txtdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Birth Date"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/txtpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="numberPassword"
+                android:minHeight="48dp"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/txtPasswordAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Password Again"
+                android:inputType="numberPassword"
+                android:textColorHint="@color/black" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_margin="5dp">
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SELLER"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUYER"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:layout_editor_absoluteY="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/btnBackRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="back" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="register" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

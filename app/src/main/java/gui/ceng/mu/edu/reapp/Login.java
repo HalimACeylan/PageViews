@@ -46,6 +46,7 @@ public class Login extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Intent i = new Intent(Login.this,Menu.class);
                                     startActivity(i);
+                                    Login.this.finish();
                                 } else {
                                     // If sign in fails, display a message to the user
                                     Log.w("AUTH", "signInWithEmail:failure", task.getException());
@@ -60,8 +61,7 @@ public class Login extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Login.this,Menu.class);
-                startActivity(i);
+                Login.this.finish();
             }
         });
     }

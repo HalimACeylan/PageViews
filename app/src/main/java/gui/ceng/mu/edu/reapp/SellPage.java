@@ -28,8 +28,7 @@ public class SellPage extends AppCompatActivity {
 
         SellMaterialAdapter adapter;
         ArrayList<Material> materialList = (ArrayList<Material>) getIntent().getSerializableExtra("list");
-        Log.d("adapterwork3",materialList.toString());
-
+        Log.d("TypeOfSell",materialList.toString());
         adapter = new SellMaterialAdapter(materialList);
         FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
         MaterialList mf = MaterialList.newInstance(adapter);
@@ -40,18 +39,18 @@ public class SellPage extends AppCompatActivity {
             public void onClick(View view) {
                 String name = "";
                 for (Material m: materialList) {
-                    if (m.getCount() == 0) {
+                    if (m.getCount() != 0) {
                         name = name + m.getName() +": " + m.getCount() + "\n";
                     }
                 }
                 if(name.equals("")){
                     Toast.makeText(SellPage.this,"Please Choose a Material",Toast.LENGTH_LONG).show();
+                }else {
                     onChosenMaterial.setName(name);
                     Intent intent = new Intent(SellPage.this,ProductPage.class);
                     intent.putExtra("onChosen",onChosenMaterial);
                     startActivity(intent);
-                }else {
-
+                    SellPage.this.finish();
                 }
             }
         });

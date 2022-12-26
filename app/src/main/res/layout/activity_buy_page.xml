@@ -58,12 +58,5 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <Button
-                android:id="@+id/btnSellNext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Okay" />
-        </LinearLayout>
+            app:layout_constraintStart_toStartOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
