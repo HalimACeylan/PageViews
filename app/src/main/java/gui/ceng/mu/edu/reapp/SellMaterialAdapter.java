@@ -1,7 +1,5 @@
 package gui.ceng.mu.edu.reapp;
 
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapter.ViewHolder> implements Serializable {
     List<Material>materials;
@@ -36,7 +33,7 @@ public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
     Material currentMaterial = materials.get(position);
     holder.title.setText(currentMaterial.getName());
-    holder.image.setImageBitmap(currentMaterial.getImage());
+    holder.image.setImageBitmap(currentMaterial.getImageInBitmap());
     holder.counter.setText(Integer.toString(currentMaterial.getCount()));
     holder.btnInc.setOnClickListener(new View.OnClickListener() {
         @Override

@@ -2,15 +2,13 @@ package gui.ceng.mu.edu.reapp;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.view.View;
 
-import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Material implements Serializable {
     private String name;
+    // Using bitmap photo as a byte[] type because bitmap doesn't Serializable
     private byte[] image;
     private int count;
     private HashMap<String ,String> owner ;
@@ -30,8 +28,8 @@ public class Material implements Serializable {
         this.count = 0;
         this.owner = new HashMap<>();
     }
-
-    public Bitmap getImage() {
+    // convert to byte[] image to bitmap to use in ImageView
+    public Bitmap getImageInBitmap() {
         if(image != null){
             Bitmap photo = BitmapFactory.decodeByteArray(image, 0, image.length);
             return Bitmap.createScaledBitmap(photo,250,250,true);

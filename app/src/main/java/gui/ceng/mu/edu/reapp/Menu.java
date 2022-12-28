@@ -32,9 +32,7 @@ public class Menu extends AppCompatActivity {
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<Material> plasticMaterial = new ArrayList<>();
                 Intent i = new Intent(Menu.this,BuyPage.class);
-                i.putExtra("list",(Serializable) plasticMaterial);
                 startActivity(i);
             }
         });

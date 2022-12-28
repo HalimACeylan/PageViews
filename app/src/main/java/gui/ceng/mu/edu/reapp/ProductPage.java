@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,15 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldPath;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,10 +30,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class ProductPage extends AppCompatActivity implements Serializable {
@@ -52,12 +46,18 @@ public class ProductPage extends AppCompatActivity implements Serializable {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_page);
+        //FireBase Stuff
         FirebaseStorage storage = FirebaseStorage.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        // Get the Current User
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        // Get the UserId
         DocumentReference userRef = db.collection("users").document(currentUser.getUid());
+        // FireStore Photo path to put photo
         StorageReference photosRef = storage.getReference().child("users").child(currentUser.getUid()).child("photos");
+        // Get the Material From BuyPage or SellPage
         material = (Material) getIntent().getSerializableExtra("onChosen");
+        // XML
         TextView txtHeader = findViewById(R.id.txtPHeader);
         TextView txtDesc = findViewById(R.id.txtPDesc);
         TextView txtName = findViewById(R.id.txtPUserName);
@@ -66,7 +66,9 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         imageView = imageView = findViewById(R.id.imgPView);
         Button btnBuyOrPost = findViewById(R.id.BuyOrPost);
         txtDesc.setText(material.getName());
-        if (material.getImage() == null) {
+        // if material doesn't have photo this mean photo came from SellPage and Need to add photo to this Material
+        if (material.getImageInBitmap() == null) {
+            // Take Photo
             new TakePhotoTask().execute();
             txtHeader.setText(material.getName());
             btnBuyOrPost.setText("Post");
@@ -74,16 +76,19 @@ public class ProductPage extends AppCompatActivity implements Serializable {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     DocumentSnapshot curUser = task.getResult();
+                    // Get Use information From FireBase Auth User Already Login
                     String userName = curUser.get("firstName") + "" +curUser.get("lastName");
                     txtName.setText(userName);
                     txtNumber.setText((String) curUser.get("phoneNumber"));
                     txtAddress.setText((String) curUser.get("firstName"));
                 }
             });
+            // else Material obj have photo this mean material must be came from BuyPage
         } else {
-            imageView.setImageBitmap(material.getImage());
+            imageView.setImageBitmap(material.getImageInBitmap());
             btnBuyOrPost.setText("Buy");
             txtHeader.setText(material.getName());
+            // Extract User information From material Already put in BuyPage
             HashMap<String,String> curUser = material.getOwner();
             String userName = curUser.get("firstName") + "" +curUser.get("lastName");
             txtName.setText(userName);
@@ -94,14 +99,16 @@ public class ProductPage extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View view) {
                 if (btnBuyOrPost.getText().toString() == "Post") {
+                    // Unique photo Name
                     String photoName = "photo_" + System.currentTimeMillis() + ".jpg";
                     StorageReference photoRef = photosRef.child(photoName);
+                    // upload Image to FireStore
                     UploadTask uploadTask = photoRef.putBytes(material.getImageInByte());
                     uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                             if (task.isSuccessful()) {
-                                // Get the download URL for the uploaded photo
+                                // Get the download URL to put in User UserSelling List
                                 String downloadUrl = task.getResult().getStorage().getPath();
                                 Map<String, String> item = new HashMap<>();
                                 Map<String, Object> UserSelling= new HashMap<>();
@@ -110,7 +117,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
                                 userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                     @Override
                                     public void onSuccess(DocumentSnapshot snapshot) {
-                                        // Check if the field exists in the document
+                                        // Check if the UserSelling exists in the document
                                         if (!snapshot.contains("UserSelling")) {
                                             List<Map<String, String>> userItems = new ArrayList<>();
                                             userItems.add(item);
@@ -147,7 +154,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
             }
         });
     }
-
+    // Take photo in another Thread
     private class TakePhotoTask extends AsyncTask<Void, Void, byte[]> {
 
         @Override
@@ -177,7 +184,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
 
             }else {
                 material.setImage(imageInByte);
-                imageView.setImageBitmap(material.getImage());
+                imageView.setImageBitmap(material.getImageInBitmap());
             }
 
         }
@@ -190,7 +197,6 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");
-            Log.d("AfterActivity", "onActivityResult: " + imageBitmap.toString());
             resultReceived = true;
         }else {
             Toast.makeText(ProductPage.this, "Please Add Image your Material", Toast.LENGTH_LONG).show();                ProductPage.this.finish();

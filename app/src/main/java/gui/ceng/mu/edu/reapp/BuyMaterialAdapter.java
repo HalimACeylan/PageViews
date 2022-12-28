@@ -1,9 +1,7 @@
 package gui.ceng.mu.edu.reapp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,10 +34,11 @@ public class BuyMaterialAdapter extends RecyclerView.Adapter<BuyMaterialAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Material currentMaterial = materials.get(position);
         holder.title.setText(currentMaterial.getName());
-        holder.image.setImageBitmap(currentMaterial.getImage());
+        holder.image.setImageBitmap(currentMaterial.getImageInBitmap());
         holder.buyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Pass the clicked material to Product Page
                 Activity currentActivity = (Activity) holder.itemView.getContext();
                 Intent intent = new Intent(currentActivity,ProductPage.class);
                 intent.putExtra("onChosen",currentMaterial);

@@ -41,6 +41,7 @@ public class BuyPage extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
         TextView distance = findViewById(R.id.distanceTxt);
+        // seekBar
         SeekBar seekBar = findViewById(R.id.seekBar2);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -57,8 +58,10 @@ public class BuyPage extends AppCompatActivity {
 
             }
         });
-
+        // Create a List of Material to Show user
+        // This material List feed by FireBase FireStore
         ArrayList<Material> materialList = new ArrayList<>();
+        // Get the all SellerList of users from users collection
         db.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -71,12 +74,16 @@ public class BuyPage extends AppCompatActivity {
                         String userLastName = (String) document.get("lastName");
                         String phoneNumber = (String) document.get("phoneNumber");
                         String userId = (String) document.getId();
+
                         final long ONE_MEGABYTE = 1024 * 1024;
+                        // Wait the FireBase Thread to Continue MainThread
                         final CountDownLatch latch = new CountDownLatch(userItems.size());
                         for (Map<String,String> materialInfo:userItems) {
+                            // Get The photo from FireBase FireStore
                             storageRef.child(materialInfo.get("url")).getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                                 @Override
                                 public void onSuccess(byte[] bytes) {
+                                    // Create a Material of Material List
                                     Material index = new Material(materialInfo.get("name"),bytes);
                                     index.getOwner().put("firstName",userName);
                                     index.getOwner().put("lastName",userLastName);
@@ -84,8 +91,6 @@ public class BuyPage extends AppCompatActivity {
                                     index.getOwner().put("userId",userId);
                                     materialList.add(index);
                                     latch.countDown();
-                                    Log.d("itemsss", materialList.toString());
-
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -95,12 +100,15 @@ public class BuyPage extends AppCompatActivity {
                             });
                         }
                         try {
+                            // Wait 2 second At most until complete Firebase Thread
                             latch.await(2, TimeUnit.SECONDS);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
+                    // Create Cards and them adapter to show
                     final BuyMaterialAdapter adapter = new BuyMaterialAdapter(materialList);
+                    // call fragment and put in adapter
                     FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
                     MaterialList mf = MaterialList.newInstance(adapter);
                     fts.add(R.id.buyContainer,mf);

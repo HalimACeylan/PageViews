@@ -42,19 +42,18 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Remember me Part
                 SharedPreferences pref = getSharedPreferences("apppref",
                         Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 if (chkRemember.isChecked()) {
-
                     editor.putString("username", email.getText().toString());
-
-
                 } else {
                     editor.remove("username");
                 }
                 editor.putBoolean("remember", chkRemember.isChecked());
                 editor.commit();
+                // Authentication part send the information to fireBase Auth to check
                 mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).
                         addOnCompleteListener(Login.this,
                                 new OnCompleteListener<AuthResult>() {
@@ -77,6 +76,7 @@ public class Login extends AppCompatActivity {
 
             }
         });
+        // save the username in device
         SharedPreferences pref = getSharedPreferences("apppref",
                 Context.MODE_PRIVATE);
         String username = pref.getString("username","");

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //navigation to login
                 Intent i = new Intent(MainActivity.this,Login.class);
                 startActivity(i);
             }
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //navigation to Sign Up
                 Intent i = new Intent(MainActivity.this,Register.class);
                 startActivity(i);
             }
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     btnCLosest.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            //navigation to ClosestLocation
             Intent i = new Intent(MainActivity.this,ClosestLocation.class);
             startActivity(i);
         }
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     btnThings.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            //navigation to ThingsToKnow
             Intent i = new Intent(MainActivity.this,ThingsToKnow.class);
             startActivity(i);
         }
