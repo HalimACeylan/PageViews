@@ -66,12 +66,12 @@
             android:text="Things to Know" />
 
         <Button
-            android:id="@+id/btnAboutMenu"
+            android:id="@+id/btnMyMaterial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="15dp"
-            android:text="About" />
+            android:text="My Materials" />
     </LinearLayout>
 
 </LinearLayout>

@@ -50,7 +50,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 password = findViewById(R.id.txtpassword);
-                passwordAgain = findViewById(R.id.txtPasswordAgain);
+                passwordAgain = findViewById(R.id.txtpassword);
                 email = findViewById(R.id.txtemail);
                 if(!password.getText().toString().equals(passwordAgain.getText().toString())){
                     Toast.makeText(Register.this,"Password Again and password must be same ",Toast.LENGTH_SHORT).show();

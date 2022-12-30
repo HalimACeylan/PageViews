@@ -16,7 +16,7 @@ public class Menu extends AppCompatActivity {
     Button btnSell;
     Button btnCLosest;
     Button btnThings;
-    Button btnAbout;
+    Button btnMyMaterial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,7 @@ public class Menu extends AppCompatActivity {
         btnSell = findViewById(R.id.btnSellMenu);
         btnCLosest = findViewById(R.id.btnDistanceMenu);
         btnThings = findViewById(R.id.btnThingsMenu);
-        btnAbout = findViewById(R.id.btnAboutMenu);
-
+        btnMyMaterial = findViewById(R.id.btnMyMaterial);
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +57,12 @@ public class Menu extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        btnMyMaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Menu.this,MyMaterials.class);
+                startActivity(i);
+            }
+        });
     }
 }
