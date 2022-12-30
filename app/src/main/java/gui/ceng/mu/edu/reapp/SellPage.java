@@ -25,16 +25,17 @@ public class SellPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_page);
         Button btnNext  = findViewById(R.id.btnSellNext);
-
+        //adapter
         SellMaterialAdapter adapter;
+        //Get From TypeOfSell
         ArrayList<Material> materialList = (ArrayList<Material>) getIntent().getSerializableExtra("list");
-        Log.d("TypeOfSell",materialList.toString());
         adapter = new SellMaterialAdapter(materialList);
         FragmentTransaction fts = getSupportFragmentManager().beginTransaction();
         MaterialList mf = MaterialList.newInstance(adapter);
         fts.add(R.id.container,mf);
         fts.commit();
         btnNext.setOnClickListener(new View.OnClickListener() {
+            // Calculate Name
             @Override
             public void onClick(View view) {
                 String name = "";

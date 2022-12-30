@@ -39,7 +39,9 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //User
         HashMap<String ,String> user = new HashMap<>();
+        //fireBase Stuff
         FirebaseFirestore db = 	FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
@@ -50,9 +52,8 @@ public class Register extends AppCompatActivity {
                 password = findViewById(R.id.txtpassword);
                 passwordAgain = findViewById(R.id.txtPasswordAgain);
                 email = findViewById(R.id.txtemail);
-                Log.d("Deneme1", "onClick: " + password.getText().toString() + " " +passwordAgain.getText().toString() );
                 if(!password.getText().toString().equals(passwordAgain.getText().toString())){
-                    Toast.makeText(Register.this,"Password Again must be same password",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this,"Password Again and password must be same ",Toast.LENGTH_SHORT).show();
                 }else {
                     firstName = findViewById(R.id.txtfirstname);
                     lastName = findViewById(R.id.txtlastname);
@@ -72,7 +73,6 @@ public class Register extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign up success, update UI with the signed-in user's information
-                                        Log.d("AUTH", "createUserWithEmail:success");
                                         FirebaseUser currentUser = mAuth.getCurrentUser();
                                         DocumentReference userRef = db.collection("users").document(currentUser.getUid());
                                         userRef.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -87,7 +87,6 @@ public class Register extends AppCompatActivity {
                                         Register.this.finish();
                                     } else {
                                         // If sign up fails, display a message to the user
-                                        Log.w("Auth", "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(Register.this, "Authentication failed.",
                                                 Toast.LENGTH_SHORT).show();
                                     }
