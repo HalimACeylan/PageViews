@@ -34,6 +34,8 @@ public class Register extends AppCompatActivity {
     EditText passwordAgain;
     CheckBox buyer;
     CheckBox seller;
+    Button back;
+    Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class Register extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
-        Button btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,5 +106,13 @@ public class Register extends AppCompatActivity {
             }
 
         });
+        back = findViewById(R.id.btnBackRegister);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Register.this.finish();
+            }
+        });
+
     }
 }
