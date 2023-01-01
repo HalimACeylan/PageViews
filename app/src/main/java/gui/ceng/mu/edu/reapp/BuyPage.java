@@ -96,7 +96,7 @@ public class BuyPage extends AppCompatActivity {
                             }
                             try {
                                 // Wait 2 second At most until complete Firebase Thread
-                                latch.await(2, TimeUnit.SECONDS);
+                                latch.await(1, TimeUnit.SECONDS);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
