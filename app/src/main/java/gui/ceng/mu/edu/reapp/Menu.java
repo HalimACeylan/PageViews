@@ -1,13 +1,12 @@
 package gui.ceng.mu.edu.reapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,13 +16,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
 public class Menu extends AppCompatActivity {
     Button btnBuy;
     Button btnSell;
-    Button btnCLosest;
+    Button btnClosest;
     Button btnThings;
     Button btnMyMaterial;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -35,7 +31,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         btnBuy = findViewById(R.id.btnBuyMenu);
         btnSell = findViewById(R.id.btnSellMenu);
-        btnCLosest = findViewById(R.id.btnDistanceMenu);
+        btnClosest = findViewById(R.id.btnDistanceMenu);
         btnThings = findViewById(R.id.btnThingsMenu);
         btnMyMaterial = findViewById(R.id.btnMyMaterial);
         btnBuy.setEnabled(false);
@@ -68,7 +64,7 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        btnCLosest.setOnClickListener(new View.OnClickListener() {
+        btnClosest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Menu.this,ClosestLocation.class);

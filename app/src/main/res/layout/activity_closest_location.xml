@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClosestLocation"
-    android:background="@drawable/arka">
+    android:background="@color/bgColor">
+
 
 
     <TextView

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,14 +24,14 @@ import java.util.HashMap;
 
 public class Register extends AppCompatActivity {
     FirebaseAuth mAuth;
-    TextView email;
-    TextView password;
-    TextView firstName;
-    TextView lastName;
-    TextView phoneNumber;
-    TextView address;
-    TextView birthDate;
-    TextView passwordAgain;
+    EditText email;
+    EditText password;
+    EditText firstName;
+    EditText lastName;
+    EditText phoneNumber;
+    EditText address;
+    EditText birthDate;
+    EditText passwordAgain;
     CheckBox buyer;
     CheckBox seller;
 
@@ -39,42 +39,42 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //User
-        HashMap<String ,String> user = new HashMap<>();
+        HashMap<String, String> user = new HashMap<>();
         //fireBase Stuff
-        FirebaseFirestore db = 	FirebaseFirestore.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
         Button btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buyer = findViewById(R.id.chkBuyer);
+                seller = findViewById(R.id.chkSeller);
+                firstName = findViewById(R.id.txtfirstname);
+                lastName = findViewById(R.id.txtlastname);
+                phoneNumber = findViewById(R.id.txtphone);
+                address = findViewById(R.id.txtaddress);
+                birthDate = findViewById(R.id.txtdate);
                 password = findViewById(R.id.txtpassword);
                 passwordAgain = findViewById(R.id.txtPasswordAgain);
                 email = findViewById(R.id.txtemail);
-                if(!password.getText().toString().equals(passwordAgain.getText().toString())){
-                    Toast.makeText(Register.this,"Password Again and password must be same ",Toast.LENGTH_SHORT).show();
-                }else {
-                    firstName = findViewById(R.id.txtfirstname);
-                    lastName = findViewById(R.id.txtlastname);
-                    phoneNumber = findViewById(R.id.txtphone);
-                    address = findViewById(R.id.txtaddress);
-                    birthDate = findViewById(R.id.txtdate);
-                    buyer = findViewById(R.id.chkBuyer);
-                    seller = findViewById(R.id.chkSeller);
+                // User Type Seller or Buyer
+                boolean isBuyer = buyer.isChecked();
+                boolean isSeller = seller.isChecked();
+                if (!password.getText().toString().equals(passwordAgain.getText().toString())) {
+                    Toast.makeText(Register.this, "Password Again and password must be same ", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (isSeller) {
+                        user.put("userType", "seller");
+                    } else if (isBuyer) {
+                        user.put("userType", "buyer");
+                    }
                     user.put("firstName", firstName.getText().toString());
                     user.put("lastName", lastName.getText().toString());
                     user.put("phoneNumber", phoneNumber.getText().toString());
                     user.put("address", address.getText().toString());
                     user.put("birthDate", birthDate.getText().toString());
-                    user.put("email",email.getText().toString());
-                    if(buyer.isChecked() && !seller.isChecked()){
-                        user.put("userType","buyer");
-                    }else if(seller.isChecked() && !buyer.isChecked()){
-                        user.put("userType","seller");
-                    }else {
-                        Toast.makeText(Register.this, "Please choose your user type", Toast.LENGTH_SHORT).show();
-                    }
-                    password = findViewById(R.id.txtpassword);
+                    user.put("email", email.getText().toString());
                     mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -86,7 +86,7 @@ public class Register extends AppCompatActivity {
                                         userRef.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
-                                                Toast.makeText(Register.this, "Student inserted with id " +
+                                                Toast.makeText(Register.this, "Register Successfully " +
                                                         userRef.getId(), Toast.LENGTH_SHORT).show();
                                             }
                                         });
@@ -95,13 +95,14 @@ public class Register extends AppCompatActivity {
                                         Register.this.finish();
                                     } else {
                                         // If sign up fails, display a message to the user
-                                        Toast.makeText(Register.this, "Authentication failed.",
+                                        Toast.makeText(Register.this, "Register failed." + task.getException(),
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
                 }
             }
+
         });
     }
 }

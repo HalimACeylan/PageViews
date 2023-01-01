@@ -1,11 +1,11 @@
 package gui.ceng.mu.edu.reapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 
@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     Button signup;
     Button btnCLosest;
     Button btnThings;
-    Button btnAbout;
 
 
     @Override

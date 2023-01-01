@@ -37,7 +37,6 @@ public class CardFragment extends Fragment {
         CardFragment fragment = new CardFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_LIST_NAME,(Serializable)list);
-        Log.d("TAG", "newInstance: " + list);
         fragment.setArguments(args);
         return fragment;
     }

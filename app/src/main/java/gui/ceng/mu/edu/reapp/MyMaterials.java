@@ -1,7 +1,6 @@
 package gui.ceng.mu.edu.reapp;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -86,10 +85,11 @@ public class MyMaterials extends AppCompatActivity {
         btnOkay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //there is no item
               if(userItems != null){
                   List<HashMap<String,String>> updatedList = new ArrayList<>();
-                  if (cf.getItemList() != null) {
-                      Log.d("Deletion", "onClick: " + userItems.toString() + " "+ cf.getItemList().isEmpty());
+                  //if fragment list is empty
+                  if (!cf.getItemList().isEmpty()) {
                       for (Material m: cf.getItemList()) {
                           for (Map<String,String> materialInfo:userItems) {
                               if(materialInfo.get("name").equals(m.getName())){
@@ -101,8 +101,8 @@ public class MyMaterials extends AppCompatActivity {
                           }
                           userRef.update("UserSelling",updatedList);
                       }
+                      // if user remove all selling
                   }else if (userItems !=null && cf.getItemList().isEmpty()) {
-                      Log.d("Deletion", "onClick: " + userItems.toString() + " "+ cf.getItemList().isEmpty());
                       userRef.update("UserSelling",updatedList);
                   }
               }

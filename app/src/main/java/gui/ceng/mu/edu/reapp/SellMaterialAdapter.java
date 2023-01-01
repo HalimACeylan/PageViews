@@ -19,7 +19,6 @@ public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapte
     public SellMaterialAdapter(List<Material>materials) {
         this.materials = materials;
     }
-    int selectedIndex;
 
     @NonNull
     @Override
@@ -38,19 +37,15 @@ public class SellMaterialAdapter extends RecyclerView.Adapter<SellMaterialAdapte
     holder.btnInc.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            selectedIndex = holder.getLayoutPosition();
-            notifyItemChanged(selectedIndex);
             currentMaterial.setCount(currentMaterial.getCount()+1);
-            notifyItemChanged(selectedIndex);
+            notifyItemChanged(holder.getLayoutPosition());
         }
     });
         holder.btnDec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedIndex = holder.getLayoutPosition();
-                notifyItemChanged(selectedIndex);
                 currentMaterial.setCount(currentMaterial.getCount()-1);
-                notifyItemChanged(selectedIndex);
+                notifyItemChanged(holder.getLayoutPosition());
             }
         });
     }

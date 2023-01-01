@@ -1,19 +1,18 @@
 package gui.ceng.mu.edu.reapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,7 +53,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         // Get the UserId
         DocumentReference userRef = db.collection("users").document(currentUser.getUid());
         // FireStore Photo path to put photo
-        StorageReference photosRef = storage.getReference().child("users").child(currentUser.getUid()).child("photos");
+        StorageReference photosRef = storage.getReference().child("users").child(currentUser.getUid());
         // Get the Material From BuyPage or SellPage
         material = (Material) getIntent().getSerializableExtra("onChosen");
         // XML
@@ -190,7 +189,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         }
 
     }
-
+    //Take photo  result
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
