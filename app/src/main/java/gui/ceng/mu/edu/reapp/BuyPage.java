@@ -1,16 +1,13 @@
 package gui.ceng.mu.edu.reapp;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.util.Log;
-import android.view.View;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,9 +19,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import org.w3c.dom.Text;
-
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -67,43 +61,48 @@ public class BuyPage extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        //user Selling List
-                        List<Map<String, String>> userItems = (List<Map<String, String>>)document.get("UserSelling");
-                        //User Information
-                        String userName = (String) document.get("firstName");
-                        String userLastName = (String) document.get("lastName");
-                        String phoneNumber = (String) document.get("phoneNumber");
-                        String userId = (String) document.getId();
+                        if (document.get("UserSelling") != null){
+                            //user Selling List
+                            List<Map<String, String>> userItems = (List<Map<String,String>>)document.get("UserSelling");
+                            //User Information
+                            String userName = (String) document.get("firstName");
+                            String userLastName = (String) document.get("lastName");
+                            String phoneNumber = (String) document.get("phoneNumber");
+                            String userId = (String) document.getId();
 
-                        final long ONE_MEGABYTE = 1024 * 1024;
-                        // Wait the FireBase Thread to Continue MainThread
-                        final CountDownLatch latch = new CountDownLatch(userItems.size());
-                        for (Map<String,String> materialInfo:userItems) {
-                            // Get The photo from FireBase FireStore
-                            storageRef.child(materialInfo.get("url")).getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-                                @Override
-                                public void onSuccess(byte[] bytes) {
-                                    // Create a Material of Material List
-                                    Material index = new Material(materialInfo.get("name"),bytes);
-                                    index.getOwner().put("firstName",userName);
-                                    index.getOwner().put("lastName",userLastName);
-                                    index.getOwner().put("phoneNumber",phoneNumber);
-                                    index.getOwner().put("userId",userId);
-                                    materialList.add(index);
-                                    latch.countDown();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    latch.countDown();
-                                }
-                            });
-                        }
-                        try {
-                            // Wait 2 second At most until complete Firebase Thread
-                            latch.await(2, TimeUnit.SECONDS);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            final long ONE_MEGABYTE = 1024 * 1024;
+                            // Wait the FireBase Thread to Continue MainThread
+                            final CountDownLatch latch = new CountDownLatch(userItems.size());
+                            for (Map<String,String> materialInfo:userItems) {
+                                // Get The photo from FireBase FireStore
+                                storageRef.child(materialInfo.get("url")).getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                    @Override
+                                    public void onSuccess(byte[] bytes) {
+                                        // Create a Material of Material List
+                                        Material index = new Material(materialInfo.get("name"),bytes);
+                                        index.getOwner().put("firstName",userName);
+                                        index.getOwner().put("lastName",userLastName);
+                                        index.getOwner().put("phoneNumber",phoneNumber);
+                                        index.getOwner().put("userId",userId);
+                                        materialList.add(index);
+                                        latch.countDown();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        latch.countDown();
+                                    }
+                                });
+                            }
+                            try {
+                                // Wait 2 second At most until complete Firebase Thread
+                                latch.await(2, TimeUnit.SECONDS);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                        }else{
+                            continue;
                         }
                     }
                     // Create Cards and them adapter to show

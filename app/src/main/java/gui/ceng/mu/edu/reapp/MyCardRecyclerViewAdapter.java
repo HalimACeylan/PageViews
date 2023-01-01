@@ -1,19 +1,18 @@
 package gui.ceng.mu.edu.reapp;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import gui.ceng.mu.edu.reapp.placeholder.PlaceholderContent.PlaceholderItem;
-import gui.ceng.mu.edu.reapp.databinding.FragmentItemBinding;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import gui.ceng.mu.edu.reapp.databinding.FragmentItemBinding;
+import gui.ceng.mu.edu.reapp.placeholder.PlaceholderContent.PlaceholderItem;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
@@ -29,7 +28,6 @@ public class MyCardRecyclerViewAdapter extends RecyclerView.Adapter<MyCardRecycl
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         return new ViewHolder(FragmentItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
     }

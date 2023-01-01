@@ -1,25 +1,17 @@
 package gui.ceng.mu.edu.reapp;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
-import gui.ceng.mu.edu.reapp.placeholder.PlaceholderContent;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -45,6 +37,7 @@ public class CardFragment extends Fragment {
         CardFragment fragment = new CardFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_LIST_NAME,(Serializable)list);
+        Log.d("TAG", "newInstance: " + list);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,7 +49,9 @@ public class CardFragment extends Fragment {
             mlist = (List<Material>) getArguments().getSerializable(ARG_LIST_NAME);
         }
     }
-
+    public List<Material> getItemList() {
+        return mlist;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
