@@ -40,6 +40,12 @@ public class ProductPage extends AppCompatActivity implements Serializable {
     private Bitmap imageBitmap;
     Material material;
     ImageView imageView;
+    TextView txtHeader;
+    TextView txtDesc;
+    TextView txtNumber;
+    TextView txtAddress;
+    TextView txtName;
+    Button btnBuyOrPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,20 +56,20 @@ public class ProductPage extends AppCompatActivity implements Serializable {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         // Get the Current User
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        // Get the UserId
+        // Get the User from FireStore
         DocumentReference userRef = db.collection("users").document(currentUser.getUid());
-        // FireStore Photo path to put photo
+        // FireStorage unique User file in users find the user path to put photo url
         StorageReference photosRef = storage.getReference().child("users").child(currentUser.getUid());
         // Get the Material From BuyPage or SellPage
         material = (Material) getIntent().getSerializableExtra("onChosen");
         // XML
-        TextView txtHeader = findViewById(R.id.txtPHeader);
-        TextView txtDesc = findViewById(R.id.txtPDesc);
-        TextView txtName = findViewById(R.id.txtPUserName);
-        TextView txtNumber = findViewById(R.id.txtPUserNumber);
-        TextView txtAddress = findViewById(R.id.txtPUserAdress);
+         txtHeader = findViewById(R.id.txtPHeader);
+         txtDesc = findViewById(R.id.txtPDesc);
+         txtName = findViewById(R.id.txtPUserName);
+         txtNumber = findViewById(R.id.txtPUserNumber);
+         txtAddress = findViewById(R.id.txtPUserAdress);
         imageView = imageView = findViewById(R.id.imgPView);
-        Button btnBuyOrPost = findViewById(R.id.BuyOrPost);
+        btnBuyOrPost = findViewById(R.id.BuyOrPost);
         txtDesc.setText(material.getName());
         // if material doesn't have photo this mean photo came from SellPage and Need to add photo to this Material
         if (material.getImageInBitmap() == null) {
@@ -76,7 +82,7 @@ public class ProductPage extends AppCompatActivity implements Serializable {
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     DocumentSnapshot curUser = task.getResult();
                     // Get Use information From FireBase Auth User Already Login
-                    String userName = curUser.get("firstName") + "" +curUser.get("lastName");
+                    String userName = curUser.get("firstName") + " " +curUser.get("lastName");
                     txtName.setText(userName);
                     txtNumber.setText((String) curUser.get("phoneNumber"));
                     txtAddress.setText((String) curUser.get("firstName"));

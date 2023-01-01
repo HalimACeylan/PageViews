@@ -28,7 +28,7 @@ public class TypeOfSell extends AppCompatActivity {
         plasticButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getImagesFromFirebaseAndNavigate("Plastic");
+                getImagesFromFirebaseAndRoute("Plastic");
 
             }
         });
@@ -36,21 +36,21 @@ public class TypeOfSell extends AppCompatActivity {
         paperButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getImagesFromFirebaseAndNavigate("Paper");
+                getImagesFromFirebaseAndRoute("Paper");
             }
         });
         Button scrapButton = findViewById(R.id.btnscrap);
         scrapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getImagesFromFirebaseAndNavigate("Scrap");
+                getImagesFromFirebaseAndRoute("Scrap");
             }
         });
         Button glassButton = findViewById(R.id.btnglass);
         glassButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getImagesFromFirebaseAndNavigate("Glass");
+                getImagesFromFirebaseAndRoute("Glass");
 
 
             }
@@ -60,12 +60,12 @@ public class TypeOfSell extends AppCompatActivity {
         batteryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getImagesFromFirebaseAndNavigate("Battery");
+                getImagesFromFirebaseAndRoute("Battery");
             }
         });
     }
 
-    public void getImagesFromFirebaseAndNavigate(String storeRef) {
+    public void getImagesFromFirebaseAndRoute(String storeRef) {
         ArrayList<Material> mList = new ArrayList<>();
         StorageReference photosRef = storageRef.child(storeRef);
         photosRef.listAll().addOnSuccessListener(listResult -> {

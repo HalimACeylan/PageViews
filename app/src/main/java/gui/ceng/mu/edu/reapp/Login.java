@@ -36,8 +36,8 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.txtEmail);
         chkRemember = findViewById(R.id.cbRememberMe);
         password = findViewById(R.id.txtPassword);
-        btnLogin = findViewById(R.id.btnlogin_pagelogin);
         btnBack = findViewById(R.id.btnback_pagelogin);
+        btnLogin = findViewById(R.id.btnlogin_pagelogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        // save the username in device
+        // bring the username from device
         SharedPreferences pref = getSharedPreferences("apppref",
                 Context.MODE_PRIVATE);
         String username = pref.getString("username","");
